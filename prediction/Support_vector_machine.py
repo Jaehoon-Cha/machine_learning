@@ -14,16 +14,16 @@ import matplotlib.pyplot as plt
 
 
 ### data load ###
-train = pd.read_pickle('../datasets/train_dataset.pickle')
-test = pd.read_pickle('../datasets/test_dataset.pickle')
+train = pd.read_pickle('../datasets/sinusoid_train.pickle')
+test = pd.read_pickle('../datasets/sinusoid_test.pickle')
 
 
 ### seperate features and target ###
 train_x = np.array(train[0]).reshape(-1,1)
-train_y = np.array(train[1]).reshape(-1,1)
+train_y = np.array(train[1])
 
 test_x = np.array(test[0]).reshape(-1,1)
-test_y = np.array(test[1]).reshape(-1,1)  
+test_y = np.array(test[1]) 
 
 
 ### SVM ###
@@ -62,11 +62,11 @@ plt.scatter(train_x, train_y, label = 'true', c = 'k')
 plt.scatter(train_x, train_predict_y, label = 'prediction', c = 'r')
 plt.xlabel('X', size = 20)
 plt.ylabel('Y', size = 20)
-plt.legend()
+plt.legend(loc = 1)
 
 plt.figure(figsize=(15,7))
 plt.scatter(test_x, test_y, label = 'true', c = 'k')
 plt.scatter(test_x, test_predict_y, label = 'prediction', c = 'r')
 plt.xlabel('X', size = 20)
 plt.ylabel('Y', size = 20)
-plt.legend()
+plt.legend(loc = 1)
