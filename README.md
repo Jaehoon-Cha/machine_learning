@@ -2,10 +2,10 @@
 self_study
 
 Linear regression train set
-![LR_train](https://user-images.githubusercontent.com/29649841/60162094-68285480-982b-11e9-9686-fe942a3d811e.png)
+![lin_train](https://user-images.githubusercontent.com/29649841/60168913-471a3080-9838-11e9-81d3-cdffe1a367b6.png)
 Linear regression test set
-![LR_test](https://user-images.githubusercontent.com/29649841/60162027-3fa05a80-982b-11e9-97a0-6b2a5e5dfdd7.png)
+![lin_test](https://user-images.githubusercontent.com/29649841/60168920-497c8a80-9838-11e9-946c-bb296a341947.png)
 Support Vector Machine train set
-![SVM_train](https://user-images.githubusercontent.com/29649841/60162409-09afa600-982c-11e9-9507-56d173e277a9.png)
+![svm_train](https://user-images.githubusercontent.com/29649841/60168926-4c777b00-9838-11e9-9626-2340f3d7bd6c.png)
 Support Vector Machine test set
-![SVM_test](https://user-images.githubusercontent.com/29649841/60162151-85f5b980-982b-11e9-942c-e843b45c815b.png)
+![svm_test](https://user-images.githubusercontent.com/29649841/60168930-4da8a800-9838-11e9-8e50-71afd9cd0895.png)
