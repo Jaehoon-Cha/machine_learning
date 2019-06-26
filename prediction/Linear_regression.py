@@ -7,16 +7,24 @@ Created on Tue Jun 25 23:00:20 2019
 Linear regression
 """
 import numpy as np 
+import pandas as pd
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
-train_x = np.linspace(-3, 3, num = 100).reshape(-1,1)
-train_y = 1/(1+np.exp(-train_x))
-    
-test_x = np.linspace(3.1, 4, num = 10).reshape(-1,1)
-test_y = 1/(1+np.exp(-test_x))
+### data load ###
+train = pd.read_pickle('../datasets/train_dataset.pickle')
+test = pd.read_pickle('../datasets/test_dataset.pickle')
 
-    
+
+### seperate features and target ###
+train_x = np.array(train[0]).reshape(-1,1)
+train_y = np.array(train[1]).reshape(-1,1)
+
+test_x = np.array(test[0]).reshape(-1,1)
+test_y = np.array(test[1]).reshape(-1,1)  
+
+
+### Linear regression ###
 def linear_regression_train(X, Y):
     clf = LinearRegression()
     clf.fit(X, Y)
@@ -29,21 +37,34 @@ def linear_regression_prediction(lr_model, X):
     return linear_prediction
 
 
+### implement ###
 linear_regression_model = linear_regression_train(train_x, train_y)
 train_predict_y = linear_regression_prediction(linear_regression_model, train_x)
 test_predict_y = linear_regression_prediction(linear_regression_model, test_x)
 
+
+### root mean squared error ###
 train_rmse = np.sqrt(np.mean((train_predict_y - train_y)**2))
 test_rmse = np.sqrt(np.mean((test_predict_y - test_y)**2))
 print('train RMSE is %.4f' %(train_rmse))
 print('test RMSE is %.4f' %(test_rmse))
-#
+
+
+### font size ###
+plt.rcParams.update({'font.size': 15})
+
+
+### draw outputs ###
 plt.figure(figsize=(15,7))
-plt.plot(train_y, label = 'true')
-plt.plot(train_predict_y, label = 'prediction')
+plt.scatter(train_x, train_y, label = 'true', c ='k')
+plt.scatter(train_x, train_predict_y, label = 'prediction', c = 'r')
+plt.xlabel('X', size = 20)
+plt.ylabel('Y', size = 20)
 plt.legend()
 
 plt.figure(figsize=(15,7))
-plt.plot(test_y, label = 'true')
-plt.plot(test_predict_y, label = 'prediction')
+plt.scatter(test_x, test_y, label = 'true', c = 'k')
+plt.scatter(test_x, test_predict_y, label = 'prediction', c = 'r')
+plt.xlabel('X', size = 20)
+plt.ylabel('Y', size = 20)
 plt.legend()
