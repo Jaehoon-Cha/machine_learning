@@ -11,24 +11,28 @@ import numpy as np
 import pandas as pd
 from sklearn.svm import SVR
 import matplotlib.pyplot as plt
-
+from sklearn.preprocessing import scale
 
 ### data load ###
-train = pd.read_pickle('../datasets/sinusoid_train.pickle')
-test = pd.read_pickle('../datasets/sinusoid_test.pickle')
+features = pd.read_pickle('../datasets/four_features.pickle')
+features = np.array(features)
+features = scale(features)
+
+train = features[:-365,:]
+test = features[-365:,:]
 
 
 ### seperate features and target ###
-train_x = np.array(train[0]).reshape(-1,1)
-train_y = np.array(train[1])
+train_x = np.array(train[:,:3])
+train_y = np.array(train[:,3:])
 
-test_x = np.array(test[0]).reshape(-1,1)
-test_y = np.array(test[1]) 
+test_x = np.array(test[:,:3])
+test_y = np.array(test[:,3:])  
 
 
 ### SVM ###
 def svm_train(X, Y):
-    clf = SVR(kernel= 'rbf', gamma= 0.05)
+    clf = SVR(kernel= 'rbf', gamma= 0.01)
     clf.fit(X, Y)
     return clf
 
@@ -58,15 +62,9 @@ plt.rcParams.update({'font.size': 15})
 
 ### draw outputs ###
 plt.figure(figsize=(15,7))
-plt.scatter(train_x, train_y, label = 'true', c = 'k')
-plt.scatter(train_x, train_predict_y, label = 'prediction', c = 'r')
-plt.xlabel('X', size = 20)
-plt.ylabel('Y', size = 20)
-plt.legend(loc = 1)
-
-plt.figure(figsize=(15,7))
-plt.scatter(test_x, test_y, label = 'true', c = 'k')
-plt.scatter(test_x, test_predict_y, label = 'prediction', c = 'r')
+plt.plot(test_y, label = 'true', c = 'k')
+plt.plot(test_predict_y, label = 'prediction', c = 'r')
+plt.title('Support Vector Machine')
 plt.xlabel('X', size = 20)
 plt.ylabel('Y', size = 20)
 plt.legend(loc = 1)
