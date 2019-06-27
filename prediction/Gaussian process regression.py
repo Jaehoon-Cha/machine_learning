@@ -4,6 +4,8 @@ Created on Thu Jun 27 22:30:18 2019
 
 @author: jaehooncha
 
+@email: Jaehoon.Cha@xjtlu.edu.cn
+
 Gaussian process regression
 using the Radial Basis Function (RBF) kernel for prediction
 """

@@ -4,6 +4,8 @@ Created on Wed Jun 26 17:33:00 2019
 
 @author: jaehooncha
 
+@email: Jaehoon.Cha@xjtlu.edu.cn
+
 Multi-Layer Perceptron keras in tensorflow
 """
 import tensorflow as tf

@@ -4,6 +4,8 @@ Created on Thu Jun 27 21:14:12 2019
 
 @author: jaehooncha
 
+@email: Jaehoon.Cha@xjtlu.edu.cn
+
 Multi-Layer Perceptron pytorch
 """
 import numpy as np 

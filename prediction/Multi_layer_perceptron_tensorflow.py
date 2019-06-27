@@ -4,6 +4,8 @@ Created on Thu Jun 27 20:14:54 2019
 
 @author: jaehooncha
 
+@email: Jaehoon.Cha@xjtlu.edu.cn
+
 Multi-Layer Perceptron tensorflow
 """
 import tensorflow as tf

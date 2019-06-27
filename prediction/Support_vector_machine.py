@@ -4,6 +4,8 @@ Created on Tue Jun 25 23:15:24 2019
 
 @author: jaehooncha
 
+@email: Jaehoon.Cha@xjtlu.edu.cn
+
 Support Vector Machine 
 using the Radial Basis Function (RBF) kernel for prediction
 """
