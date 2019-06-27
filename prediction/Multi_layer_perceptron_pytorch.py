@@ -52,8 +52,7 @@ def initialize_weights(module):
     elif isinstance(module, nn.Linear):
         module.bias.data.zero_()
 
-n_nodes = []
-
+        
 ### MLP ###
 class mlp_network(nn.Module):
     def __init__(self, n_input, n_hidden_node_1, n_hidden_node_2, n_output):
