@@ -8,7 +8,7 @@ Linear regression test prediction
 Support Vector Machine test prediction
 ![svm_pred](https://user-images.githubusercontent.com/29649841/60338636-1291aa80-99d9-11e9-943e-f19afc28b6f1.png)
 Gaussian process regression test prediction
-![gpr_pred](https://user-images.githubusercontent.com/29649841/60280363-5fbc4080-9935-11e9-838b-2adc764f88f1.png)
+![gpr_pred](https://user-images.githubusercontent.com/29649841/60340287-b1b8a100-99dd-11e9-9e9b-3493db9d43d8.png)
 Multi Layer Perceptron keras in tensorflow test prediction
 ![mlp_pred_keras_in_tf](https://user-images.githubusercontent.com/29649841/60338640-132a4100-99d9-11e9-8244-1d0479432d2f.png)
 Multi Layer Perceptron tensorflow test prediction
