@@ -1,6 +1,8 @@
 # machine_learning
-synthetic data
-![features](https://user-images.githubusercontent.com/29649841/60264840-c5e59b00-9916-11e9-9a26-64a3df95bc06.png)
+Synthetic train data
+![features_train](https://user-images.githubusercontent.com/29649841/60318487-cf6a1400-99a5-11e9-8345-2eea8a40016c.png)
+Synthetic test data
+![features_test](https://user-images.githubusercontent.com/29649841/60318491-d133d780-99a5-11e9-97ea-bf765c0ae974.png)
 Linear regression test prediction
 ![lin_pred](https://user-images.githubusercontent.com/29649841/60264841-c5e59b00-9916-11e9-8b41-35df71a4092f.png)
 Gaussian process regression test prediction
