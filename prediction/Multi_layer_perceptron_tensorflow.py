@@ -123,8 +123,8 @@ test_predict_y = mlp_predict(test_x)
 
 
 ### root mean squared error ###
-train_rmse = np.sqrt(np.mean((train_predict_y - train_y)**2))
-test_rmse = np.sqrt(np.mean((test_predict_y - test_y)**2))
+train_rmse = np.sqrt(np.mean((train_predict_y - train_y.reshape(-1))**2))
+test_rmse = np.sqrt(np.mean((test_predict_y - test_y.reshape(-1))**2))
 print('train RMSE is %.4f' %(train_rmse))
 print('test RMSE is %.4f' %(test_rmse))
 
@@ -135,8 +135,8 @@ plt.rcParams.update({'font.size': 15})
 
 ### draw outputs ###
 plt.figure(figsize=(15,7))
-plt.plot(test_y, label = 'true', c = 'k')
-plt.plot(test_predict_y, label = 'prediction', c = 'r')
+plt.plot(test_y, label = 'true', c = 'r', marker = '_')
+plt.plot(test_predict_y, label = 'prediction', c = 'k')
 plt.title('Multi-Layer Perceptron Tensorflow')
 plt.xlabel('X', size = 20)
 plt.ylabel('Y', size = 20)

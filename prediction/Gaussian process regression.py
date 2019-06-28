@@ -35,8 +35,10 @@ test_y = np.array(test[:,3:])
 
 ### GPR ###
 def gpr_train(X, Y):
+    dy = 0.1 * (0.5 + 1.0 * np.random.random(Y.shape[0]))
     kernel = C(1.0, (1e-3, 1e3)) * RBF(10, (1e-2, 1e2))
-    clf = GaussianProcessRegressor(kernel=kernel, n_restarts_optimizer=9)
+    clf = GaussianProcessRegressor(kernel=kernel, alpha=dy ** 2, n_restarts_optimizer=10)
+    #kernel=kernel, n_restarts_optimizer=9
     clf.fit(X, Y)
     return clf
 
@@ -54,8 +56,8 @@ test_predict_y, test_sigma = gpr_prediction(gpr_model, test_x)
 
 
 ### root mean squared error ###
-train_rmse = np.sqrt(np.mean((train_predict_y - train_y)**2))
-test_rmse = np.sqrt(np.mean((test_predict_y - test_y)**2))
+train_rmse = np.sqrt(np.mean((train_predict_y - train_y.reshape(-1))**2))
+test_rmse = np.sqrt(np.mean((test_predict_y - test_y.reshape(-1))**2))
 print('train RMSE is %.4f' %(train_rmse))
 print('test RMSE is %.4f' %(test_rmse))
 
@@ -66,8 +68,8 @@ plt.rcParams.update({'font.size': 15})
 
 ### draw outputs ###
 plt.figure(figsize=(15,7))
-plt.plot(test_y, label = 'true', c = 'k')
-plt.plot(test_predict_y, label = 'prediction', c = 'r')
+plt.plot(test_y, label = 'true', c = 'r', marker = '_')
+plt.plot(test_predict_y, label = 'prediction', c = 'k')
 plt.fill(np.concatenate([np.array(range(len(test_x))), np.array(range(len(test_x)))[::-1]]),
          np.concatenate([test_predict_y - 1.9600 * test_sigma,
                         (test_predict_y + 1.9600 * test_sigma)[::-1]]),
