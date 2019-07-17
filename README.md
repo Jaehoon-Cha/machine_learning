@@ -11,7 +11,7 @@ Gaussian process regression test prediction
 ![gpr_pred](https://user-images.githubusercontent.com/29649841/60340287-b1b8a100-99dd-11e9-9e9b-3493db9d43d8.png)
 Multi Layer Perceptron keras in tensorflow test prediction
 ![mlp_pred_keras_in_tf](https://user-images.githubusercontent.com/29649841/60338640-132a4100-99d9-11e9-8244-1d0479432d2f.png)
-Multi Layer Perceptron tensorflow test prediction
-![mlp_pred_tf](https://user-images.githubusercontent.com/29649841/60338634-11f91400-99d9-11e9-9c68-8b7d4d9b2225.png)
-Multi Layer Perceptron pytorch test prediction
-![mlp_pred_torch](https://user-images.githubusercontent.com/29649841/60338635-1291aa80-99d9-11e9-9c47-ac9a06e11457.png)
+Gated Recurrent Unit keras in tensorflow test prediction
+![gru_pred_keras_in_tf](https://user-images.githubusercontent.com/29649841/60439392-6274a980-9c45-11e9-90a0-9dba6821e7cd.png)
+Long Short Term Memory keras in tensorflow test prediction
+![lstm_pred_keras_in_tf](https://user-images.githubusercontent.com/29649841/60439407-66083080-9c45-11e9-9bb8-3e15fdc07ba3.png)
